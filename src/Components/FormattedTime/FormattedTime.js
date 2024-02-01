@@ -4,7 +4,7 @@ const FormattedTime = ({ stopwatch }) => {
 
   const formatTime = milliseconds => {
     const padZero = (num) => (num < 10 ? `0${num}` : num);
-    const pad2Zero = (num) => (num < 100 ? `0${num}` : num);
+    const pad2Zero = (num) => (num < 100 ? `0${num}` : num); // Tego kodu i jego wykorzystania poniżej nie jestem pewna :)
     
     const totalSeconds = Math.floor(milliseconds / 1000);
     const hours = Math.floor(totalSeconds / 3600);
@@ -17,7 +17,6 @@ const FormattedTime = ({ stopwatch }) => {
 
   return (
     <div>
-      <h1 className={styles.header}>Stopwatch</h1>
       <div className={styles.time}>{formatTime(stopwatch)}</div>
     </div>
   );

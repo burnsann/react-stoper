@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 const App = () => {
 
   const [stopwatch, setStopwatch] = useState(0);
-  const [timer, setTimer] = useState(null);
+  const [timer, setTimer] = useState(null); // Potrzebuję dodatkowych wyjaśnień co do tego stanu oraz setInterval.
 
   const startTimer = () => {
     setTimer(setInterval(() => {
