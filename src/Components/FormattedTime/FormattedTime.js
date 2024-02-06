@@ -4,7 +4,7 @@ const FormattedTime = ({ stopwatch }) => {
 
   const formatTime = milliseconds => {
     const padZero = (num) => (num < 10 ? `0${num}` : num);
-    const pad2Zero = (num) => (num < 100 ? `0${num}` : num); // Tego kodu i jego wykorzystania poniżej nie jestem pewna :)
+    const pad2Zero = (num) => (num < 100 ? `0${num}` : num);
     
     const totalSeconds = Math.floor(milliseconds / 1000);
     const hours = Math.floor(totalSeconds / 3600);

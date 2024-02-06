@@ -4,12 +4,14 @@ import { useState, useEffect } from "react";
 const App = () => {
 
   const [stopwatch, setStopwatch] = useState(0);
-  const [timer, setTimer] = useState(null); // Potrzebuję dodatkowych wyjaśnień co do tego stanu oraz setInterval.
+  const [timer, setTimer] = useState(null);
 
   const startTimer = () => {
-    setTimer(setInterval(() => {
-      setStopwatch((prevValue) => prevValue + 1);
-    }, 1))
+    if(!timer) {
+      setTimer(setInterval(() => {
+        setStopwatch((prevValue) => prevValue + 1);
+      }, 1))
+    }
   };
 
   const stopTimer = () => {
@@ -35,12 +37,12 @@ const App = () => {
   return (
     <div className="container">
       <FormattedTime stopwatch={stopwatch} />
-      <button className="button" onClick={() => startTimer()}>Start</button> {/* Który zapis onClick jest właściwy, ten... */}
-      <button className="button" onClick={stopTimer}>Stop</button> {/* ...czy ten?  */}
+      <button className="button" onClick={startTimer}>Start</button>
+      <button className="button" onClick={stopTimer}>Stop</button>
       <button className="button" onClick={resetTimer}>Reset</button>
     </div>
   );
 };
 
 export default App;
-//Jeśli nacisnę 2x przycisk start to nie da się już zatrzymać stopera buttonem stop. Dodatkowo czas zaczyna odliczać się szybciej i przyspiesza po każdym naciśnięciu start, dlaczego?
+
